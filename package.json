@@ -1,1 +1,12 @@
-{"name":"science-religion-survey","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite"},"devDependencies":{"vite":"8.3.4"}}
+{
+  "name": "science-religion-survey",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "8.3.4"
+  }
+}

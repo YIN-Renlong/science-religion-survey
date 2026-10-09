@@ -1,6 +1,19 @@
 # Release validation
 
-Release 1.0.0 · 9 October 2026
+Release 1.1.0 · 9 October 2026
+
+## Version 1.1 checks
+
+- All three published-data files remain byte-identical to v1.0. Structural validation still passes for 91 records and 16,749 source cells.
+- Reading logic passes 6,661 data-driven cases, plus targeted tests of source-rounded nets, ties, zero versus dash, total exclusion, multiple-response language and missing group values.
+- Browser checks confirmed simultaneous visibility of all dashboard sections, updated matrix notes, question and demographic readings, retained selection across section navigation, and expandable methodology.
+- Desktop and 390px responsive views were inspected. The developer credit is visible under the logo. Mobile controls, notes, bars and highlights fit their containers.
+- Existing question URLs retain their meaning and scroll to the corresponding chart. No site-script errors were observed during these interactions.
+- Dataset v1.0.0 is unchanged; dashboard v1.1.0 adds presentation and descriptive calculations only.
+- An isolated v1.0-to-v1.1 installer test preserved Git history, unrelated files and unchanged data modification times. Every changed existing file had an exact backup; a second run changed nothing.
+- The iterative publishing test used a real local remote and a mock GitHub CLI. It created one descendant commit, pushed main, included the new insight assets, updated Pages configuration, and created no extra commit on rerun.
+
+## Original data validation (v1.0, retained)
 
 ## Data
 

@@ -71,11 +71,11 @@ if ! git var GIT_AUTHOR_IDENT >/dev/null 2>&1; then
   git config --local user.email "${ACCOUNT_ID}+${ACCOUNT_LOGIN}@users.noreply.github.com"
 fi
 
-git add -- .survey-project.json .gitignore .nojekyll index.html README.md DATA_NOTES.md VALIDATION.md assets/css/styles.css assets/js/main.js assets/js/data.js data/survey.json data/survey.csv scripts/extract_data.py scripts/validate_data.py scripts/publish.sh package.json package-lock.json vite.config.js
+git add -- .survey-project.json .gitignore .nojekyll index.html README.md DATA_NOTES.md VALIDATION.md CHANGELOG.md assets/css/styles.css assets/js/main.js assets/js/insights.js assets/js/data.js data/survey.json data/survey.csv scripts/extract_data.py scripts/validate_data.py scripts/validate_insights.cjs scripts/publish.sh package.json package-lock.json vite.config.js
 if git diff --cached --quiet; then
   echo "No changes to commit."
 else
-  git commit -m "Publish faithful science and religion survey explorer"
+  git commit -m "Update survey dashboard to v1.1 with descriptive chart readings"
 fi
 
 if [ "$REPO_EXISTS" -eq 0 ]; then

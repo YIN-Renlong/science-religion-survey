@@ -51,3 +51,7 @@ Each response row has its source PDF page. The CSV repeats the direct page URL f
 Percentages were extracted from the PDF text and independently matched against PDF-coordinate word tokens. Main table bases were extracted with column geometry and checked by reconciling unweighted demographic groups to each question total. Original 2021 categories are kept, without updating names or reclassifying people.
 
 This is a descriptive visualisation of public opinion. The executive summary and the full report contain interpretations beyond the table values. The interface's reading notes are labelled explanations, not additional survey findings.
+
+## Dashboard reading notes (v1.1)
+
+Reading notes are deterministic descriptions of the currently displayed data. Maxima and ties use the published rounded integers. Group ranges exclude the total and nonnumeric dashes. Net gaps use the first two main published net rows; narrower endpoint nets stay separate. No additional response category, reconstructed percentage, significance test or causal interpretation is introduced. The underlying data files are unchanged from v1.0.

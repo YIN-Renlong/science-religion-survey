@@ -1,5 +1,7 @@
 # Science, Religion & Public Perception
 
+Version 1.1.0 is a single-page dashboard.
+
 An independent, static visualisation of the published Theos–Faraday–YouGov survey tables. Created by YIN Renlong.
 
 Fieldwork: 5 May–13 June 2021. Report: Nick Spencer and Hannah Waite, *‘Science and Religion’: Moving away from the shallow end* (Theos, 2022).
@@ -16,9 +18,9 @@ For optional development only, `package.json` supplies a Vite preview server. No
 
 ## Contents
 
-- Overview: compatibility wording comparison and a science-by-wording matrix.
+- One continuous dashboard with in-page navigation, a compatibility wording comparison and a science-by-wording matrix.
 - Explorer: all 75 main published table blocks and 16 generational appendix blocks, including repeated questions and three derived scores.
-- Distribution and one-dimension demographic comparison views.
+- Distribution and one-dimension demographic comparison views, with brief reading notes and visual highlights that follow the selected data.
 - Exact tables, unweighted/weighted bases, source-page links, CSV/JSON downloads.
 - Methods and source discrepancies, with no invented intersections or statistical inference.
 
@@ -28,7 +30,8 @@ The 91 records contain 16,749 published percentage cells and dash symbols. They 
 
 - `index.html`: semantic page structure and methods.
 - `assets/css/styles.css`: responsive presentation.
-- `assets/js/main.js`: navigation, charts, filters, exports.
+- `assets/js/main.js`: in-page navigation, charts, filters, exports.
+- `assets/js/insights.js`: deterministic descriptive chart readings.
 - `assets/js/data.js`: browser-ready copy of the structured data.
 - `data/survey.json`: canonical transcription with provenance.
 - `data/survey.csv`: the same published values in long format.
@@ -64,6 +67,16 @@ The publishing script uses your authenticated `gh` CLI, an HTTPS origin, `main`,
 Intended repository: https://github.com/YIN-Renlong/science-religion-survey
 
 Expected Pages address after publication: https://yin-renlong.github.io/science-religion-survey/
+
+## Version 1.1 upgrade
+
+Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files are left byte-identical, and the existing Git history and repository are reused. See `CHANGELOG.md`. The dashboard version is 1.1.0; the unchanged dataset remains 1.0.0.
+
+Chart notes report maxima, ties and percentage-point ranges at the published precision. They update with the controls and do not imply statistical significance or causation. Comparisons exclude the total from group ranges and never treat a dash as zero.
+
+Optional development checks for this logic use Node:
+
+    node scripts/validate_insights.cjs
 
 ## Attribution and rights
 
