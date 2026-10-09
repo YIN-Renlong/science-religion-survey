@@ -10,7 +10,7 @@ for(const name of ['insights','report','visuals'])vm.runInContext(fs.readFileSyn
 const report=context.SURVEY_REPORT.build(data,context.SURVEY_INSIGHTS);
 const findings=context.SURVEY_VISUALS.build(data);
 const template=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const markup=template+report.wording+report.records+report.appendix+findings.html+findings.toc;
+const markup=template+report.records+report.appendix+findings.html+findings.toc;
 const decode=s=>s.replace(/&(amp|lt|gt|quot|#39);/g,(_,k)=>({amp:'&',lt:'<',gt:'>',quot:'"','#39':"'"}[k]));
 const records=[...report.records.matchAll(/data-record="([^"]+)"/g)].map(m=>m[1]);
 const breakdowns=[...report.appendix.matchAll(/data-breakdown="([^"]+)"/g)].map(m=>m[1]);
@@ -40,7 +40,7 @@ for(const r of data.records){
 assert.equal(expected,16749);
 assert.equal(cells.size,expected);
 assert(!/<(?:select|input|aside)\b/i.test(markup),'No selectors or split sidebar');
-for(const id of ['question-archive','raw-data']){
+for(const id of ['question-archive','raw-data','methods']){
  const tag=template.match(new RegExp('<details[^>]*id="'+id+'"[^>]*>'))?.[0];
  assert(tag && !/\sopen(?:\s|=|>)/.test(tag),'Reference sections must be closed by default');
 }
@@ -55,8 +55,11 @@ for(const m of markup.matchAll(/href="#([^"]+)"/g))assert(idSet.has(m[1]),`Broke
 assert(report.wording.includes('47% incompatible, 41% compatible, 12% don\'t know'));
 assert(report.wording.includes('57% incompatible, 30% compatible, 13% don\'t know'));
 const rendered=[...findings.html.matchAll(/data-viz-cell="([^"]+)" data-viz-value="([^"]*)"/g)];
-assert.equal(rendered.length,308);
-assert.equal([...findings.html.matchAll(/data-finding=/g)].length,12);
+assert.equal(rendered.length,134);
+assert.equal([...findings.html.matchAll(/data-finding=/g)].length,10);
+assert.equal([...findings.html.matchAll(/<figure /g)].length,10);
+assert.equal([...findings.html.matchAll(/class="takeaway"/g)].length,10);
+assert.equal([...findings.html.matchAll(/class="waffle-cell /g)].length,100);
 for(const [,key,value] of rendered){
  const [id,ri,ci]=key.split(':');
  const r=data.records.find(record=>record.id===id);
@@ -64,7 +67,16 @@ for(const [,key,value] of rendered){
  assert.equal(value,String(r.rows[Number(ri)].values[Number(ci)]??''),`Graphic must use the published value: ${key}`);
 }
 assert(findings.html.includes('49–52% don’t know'));
-assert(findings.html.includes('No qualification reported: 55% in religion, 20% in science.'));
+assert(findings.html.includes('Morality and consciousness produce almost even splits.'));
+for(const name of ['composition-chart','paired-chart','heatmap','interval-chart','lollipop-chart','waffle'])assert(findings.html.includes('class="'+name),`Missing chart form ${name}`);
 assert(findings.html.includes('data-viz-cell="q1_3__main:6:0" data-viz-value="29"'),'Use published net 29, not rounded components 30');
-assert(findings.html.includes('data-viz-cell="q24_2__main:5:0" data-viz-value="0"'),'Keep a published zero');
-console.log(`PASS: 13 default visual figures, ${rendered.length} exact source values in the new comparisons, closed source archives, all 91 records / ${expected.toLocaleString('en-GB')} tokens preserved, and working anchors.`);
+assert(report.appendix.includes('data-source-cell="q24_2__main:5:0" data-published-value="0%"'),'Keep a published zero in the archive');
+const sourcePoint=(id,pattern)=>data.records.find(r=>r.id===id+'__main').rows.find(r=>pattern.test(r.label)).values[0];
+const sciences=['1','2','3','5','6','7','8','9'];
+for(const n of sciences){const a=sourcePoint('q8a_'+n,/^Net: Strongly agree/);for(const w of ['b','c','d'])assert(a>sourcePoint('q8'+w+'_'+n,/^Net: Strongly agree/),'Religious wording must have most agreement in each science');}
+const differences=sciences.map(n=>sourcePoint('q8a_'+n,/^Net: Strongly agree/)-sourcePoint('q8a_'+n,/^Net: Disagree/));
+assert.equal(differences.filter(d=>d>0).length,1);assert.equal(differences.filter(d=>d<0).length,6);assert.equal(differences.filter(d=>d===0).length,1);
+assert.equal([...findings.html.matchAll(/class="waffle-cell positive"/g)].length,sourcePoint('q1_10',/^Net: Strongly agree/));
+assert.equal([...findings.html.matchAll(/class="waffle-cell negative"/g)].length,sourcePoint('q1_10',/^Net: Disagree/));
+assert(findings.html.includes('width:28%') && findings.html.includes('99% after source rounding'),'Do not rescale the 99% explanatory-limits distribution');
+console.log(`PASS: 10 default visual figures, six chart forms, ${rendered.length} exact source values in the new comparisons, closed source archives, all 91 records / ${expected.toLocaleString('en-GB')} tokens preserved, and working anchors.`);

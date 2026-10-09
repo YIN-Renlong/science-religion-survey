@@ -1,8 +1,23 @@
 # Release validation
 
-Release 1.3.0 · 9 October 2026
+Release 1.4.0 · 9 October 2026
 
-## Version 1.3 checks
+## Version 1.4 checks
+
+- All three data files remain byte-identical to v1.3; dataset version remains 1.0.0.
+- Coverage validation checks exactly ten figures and six chart forms. All 134 chart values match their canonical source rows, including the published 29% science net.
+- Data coverage remains 91 records and 16,749 exact published cells/dashes. Internal anchors remain unique and resolve.
+- The ethics waffle contains exactly 100 squares, with categories matching the published net percentages. The morality distribution retains its 99% rounded total without rescaling.
+- Checks confirm the religious wording has the highest agreement across each of the eight sciences, and the eight religious-wording statements have one agree-leading result, six disagree-leading results and one tie.
+- The unchanged reading engine passes all 6,661 cases and its source-net, tie, dash and zero checks.
+- Desktop inspection confirms readable paired dots, heatmap and waffle charts with the takeaway below the graphic. At a 390px iframe width, all main content fits without horizontal page overflow and heatmap labels remain legible.
+- Question, raw-data and methods references are closed by default. A main-chart source link opens the corresponding full question automatically.
+
+- A source-table link opens the corresponding breakdown, and both source sections close successfully back to the findings.
+- An isolated v1.3-to-v1.4 upgrade preserves Git history, unrelated files and all unchanged data modification times. Changed files have exact timestamped backups; reinstalling makes no changes.
+- A real local Git remote with a mock GitHub CLI confirms one descendant commit, main push, Pages configuration and no extra commit on a clean rerun. This is a simulated publication, not a live GitHub deployment.
+
+## Previous version 1.3 checks (retained)
 
 - Canonical JSON, CSV and browser data remain byte-identical to v1.2; the dataset is still version 1.0.0.
 - Coverage validation confirms 13 default figures and checks all 308 labelled source values in the new comparisons against the canonical transcription.

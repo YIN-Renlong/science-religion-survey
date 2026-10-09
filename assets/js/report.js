@@ -9,7 +9,7 @@
     ['views-of-science','Views of science','What science can explain','Published views on the scope, limits and value of science.'],
     ['views-of-religion','Views of religion','Views of religion','These statements measure respondents’ views; they are not conclusions of this report.'],
     ['scientific-confidence','Scientific confidence','Confidence in scientific knowledge','Self-reported confidence is distinct from demonstrated knowledge.'],
-    ['specific-sciences','Specific sciences','Every science-and-wording question','The complete response distributions behind the four overview matrices.'],
+    ['specific-sciences','Specific sciences','Every science-and-wording question','The complete response distributions behind the science comparisons.'],
     ['evolution','Evolution','Evolution, origins & belief','Read each statement in its own terms. Question bases differ.'],
     ['technology','Technology & risk','Technology, benefits & risks','Benefits, risks, balance and unfamiliarity remain separate responses.'],
     ['background','Background & knowledge','Qualifications & religious affiliation','These are published outcomes, not joint filters for other questions.'],

@@ -5,12 +5,12 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const $=id=>document.getElementById(id);
   if(!data||!window.SURVEY_INSIGHTS||!window.SURVEY_REPORT||!window.SURVEY_VISUALS){
-    $('wording-chart').textContent='The report could not load. Please check that the assets folder is beside index.html, or use the source and data links below.';
+    $('finding-charts').textContent='The report could not load. Please check that the assets folder is beside index.html, or use the source and data links below.';
     return;
   }
   const report=window.SURVEY_REPORT.build(data,window.SURVEY_INSIGHTS);
   const findings=window.SURVEY_VISUALS.build(data);
-  for(const [id,html] of [['wording-chart',report.wording],['finding-charts',findings.html],['question-charts',report.records],['topic-links',findings.toc],['all-breakdowns',report.appendix]])$(id).innerHTML=html;
+  for(const [id,html] of [['finding-charts',findings.html],['question-charts',report.records],['topic-links',findings.toc],['all-breakdowns',report.appendix]])$(id).innerHTML=html;
   $('source-links').innerHTML=Object.values(data.sources).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join('');
 
   function csv(r){
@@ -35,7 +35,7 @@
     let hash;
     try{hash=decodeURIComponent(location.hash.slice(1));}catch(_){return;}
     if(!hash)return;
-    const aliases={sciences:'difficulty-a',questions:'question-archive','science-agree':'difficulty-a','science-disagree':'difficulty-a','science-unknown':'uncertainty','science-neutral':'difficulty-a'};
+    const aliases={'wording-title':'compatibility','difficulty-b':'wording-comparison','difficulty-c':'wording-comparison','difficulty-d':'wording-comparison','age':'table-q3_1__main','technology':'topic-technology','qualifications':'topic-background',sciences:'difficulty-a',questions:'question-archive','science-agree':'difficulty-a','science-disagree':'difficulty-a','science-unknown':'uncertainty','science-neutral':'difficulty-a'};
     let id=aliases[hash]||hash;
     if(hash==='explorer'||hash.startsWith('explorer?')){
       const params=new URLSearchParams(location.hash.split('?')[1]||'');

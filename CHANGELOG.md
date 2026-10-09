@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.4.0 — 9 October 2026
+
+- Curated exactly ten figures for a 10–15 minute Science and Religion presentation.
+- Replaced the four long science-wording comparisons with a compact heatmap, paired dots and an uncertainty range plot.
+- Added lollipops, complete response compositions and a 100-square ethics waffle, with consistent agreement/disagreement colours.
+- Gave every figure a brief introduction, graphic and visible takeaway; added a closing course discussion.
+- Simplified the outline and tightened the single-column layout. Detailed methods now join the question and data archives as closed reference sections.
+- Kept the full dataset, source notes, bases, original wording, downloads and earlier question links.
+- Preserved all three data files byte-for-byte and retained the same repository, backup and publishing workflow.
+
 ## 1.3.0 — 9 October 2026
 
 - Changed the default experience from an exhaustive list of records to 13 visual figures organised around survey findings.

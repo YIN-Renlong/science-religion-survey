@@ -1,6 +1,6 @@
 # Science, Religion & Public Perception
 
-Version 1.3.0 is a single-column visual report with optional source detail.
+Version 1.4.0 is a ten-figure, single-column visual story for a 10–15 minute Science and Religion presentation.
 
 An independent, static visualisation of the published Theos–Faraday–YouGov survey tables. Created by YIN Renlong.
 
@@ -16,16 +16,34 @@ Then visit http://localhost:8000. The data are loaded through a local classic sc
 
 For optional development only, `package.json` supplies a Vite preview server. Node/npm are not required for opening, serving, or publishing the website. The optional development packages are not loaded by visitors.
 
-## Contents
+## The presentation
 
-- Thirteen visible figures lead with findings, including ranked bars, agreement–disagreement comparisons, uncertainty ranges and a comparison of qualifications.
-- The main reading flow covers compatibility, all four science-question wordings, uncertainty, the limits of science, confidence in understanding, evolution, views of religion, technology, age and qualifications.
-- Section anchors are optional. No dropdown, question selector or tab is needed to read the main findings.
-- Two reference sections are closed by default: the full question-chart archive and the complete published tables. Clicking a chart label opens its exact question. Direct table links open the relevant source section automatically.
-- All 75 main table records and 16 generational appendix records remain available, including all 16,749 published percentage cells and dashes. CSV/JSON downloads retain the complete transcription.
-- Source links, methods, question-specific bases and developer attribution remain visible.
+Read straight down. Each of the ten figures follows **introduction → graphic → takeaway**, with source links and question-specific bases. There are no dropdowns, tabs or required selections. The outline provides optional jumps.
 
-The default page is an editorial selection of comparisons, not an exhaustive sequence of every question. The complete source archive is retained for audit and reuse. Its 91 records include repeated questions and are not 91 distinct questionnaire items or respondent-level microdata.
+Suggested pace: 30–60 seconds for the opening, about one minute per figure, then 1–3 minutes for the final course discussion. This is a pacing guide, not an automatic timer.
+
+| Figure | Question | Graphic |
+| --- | --- | --- |
+| 01 | Does the broad compatibility picture depend on the wording? | Stacked composition bars |
+| 02 | Which particular sciences are seen as making religion harder? | Paired agreement/disagreement dots |
+| 03 | How do religious, Christian, Muslim and atheist wordings compare? | Agreement heatmap |
+| 04 | Where is uncertainty concentrated? | Dot-and-range plot across eight sciences |
+| 05 | Which sciences do people feel they understand? | Ranked lollipop plot |
+| 06 | What are science’s value and explanatory limits? | Paired dots |
+| 07 | How widely are evolution and an ancient Earth accepted? | Paired dots |
+| 08 | Can evolution explain morality and consciousness? | Complete response compositions |
+| 09 | Does science have something to say about ethics? | 100-square waffle |
+| 10 | What else do people think about religion? | Paired dots |
+
+The figures describe public perceptions in 2021. They do not answer the scientific or theological questions themselves. Repeated chart forms maintain consistent encodings; chart variety is used where the comparison benefits from it.
+
+## Supporting evidence
+
+The full question archive, raw tables and detailed methods are all closed by default. Click a chart label or source link to open the exact supporting question. All 75 main table records and 16 generational records remain available, including all 16,749 published percentage cells and dashes. These 91 records are not 91 distinct survey questions.
+
+Age, technology, qualifications, affiliation, conditional evolution reasons and the generational appendix remain in the archive. Every original data file is byte-identical to v1.3. CSV/JSON downloads include the complete transcription.
+
+The developer credit, survey date and source attribution remain visible. No respondent-level correlations, pooled rates, causal estimates or significance tests are added.
 
 ## Structure
 
@@ -71,20 +89,20 @@ Intended repository: https://github.com/YIN-Renlong/science-religion-survey
 
 Expected Pages address after publication: https://yin-renlong.github.io/science-religion-survey/
 
-## Version 1.3 upgrade
+## Version 1.4 upgrade
 
-Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files are left byte-identical, and existing Git history and the repository are reused. See `CHANGELOG.md`. The dashboard version is 1.3.0; the dataset remains 1.0.0.
+Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files keep their content and modification times, and existing Git history and the repository are reused. See `CHANGELOG.md`. Dashboard version: 1.4.0. Dataset version: 1.0.0.
 
-The large tables shown by default in v1.2 are now closed reference sections. Previously shared question and group links still open the corresponding source record. Closing a reference section returns to the visual findings.
+Old question and table links still open their source record. Earlier main-topic links either lead to the current figure or the relevant reference section. Closing a source section returns to the findings.
 
-Every bar uses a common 0–100% scale. In the opposing-bar charts, both sides start at zero in the centre; they are separate percentages, not negative observations. Neutral and unknown responses remain separately labelled. Uncertainty bands span the minimum and maximum across eight published questions and are not confidence intervals. No values are normalised or reconstructed from rounded components.
+The dot and lollipop axes run from 0 to 100%. The heatmap uses a clearly labelled 0–50% colour scale. Uncertainty bands show the minimum and maximum of eight published question values, not confidence intervals. Waffle squares represent percentage points, not individual respondents. Stacks are never rescaled; the 99% morality row retains its rounding gap. Published nets are read directly from the tables.
 
 Optional development checks use Node:
 
     node scripts/validate_insights.cjs
     node scripts/validate_report.cjs
 
-The report check verifies the 13-figure default structure, every labelled source value in the new comparisons, closed reference sections, all 91 source records, all 16,749 exact published tokens and working internal links.
+The report check verifies ten default figures, six chart forms, 134 exact source values, the waffle’s cell counts, major comparison claims, closed reference sections, all 91 source records, all 16,749 published tokens and working internal links.
 
 ## Attribution and rights
 
