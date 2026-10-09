@@ -1,8 +1,22 @@
 # Release validation
 
-Release 1.1.0 · 9 October 2026
+Release 1.2.0 · 9 October 2026
 
-## Version 1.1 checks
+## Version 1.2 checks
+
+- All three dataset files remain byte-identical to v1.1. Structural validation passes for 91 records and 16,749 published cells.
+- Report coverage checks confirm 91 question charts, four matrices with 128 values, 91 group tables and every exact published token. All internal anchors are unique and have a destination.
+- The report contains no selectors, search inputs, sidebars or collapsed details. Each chart has a reading note. All publication records and group values are present in the document simultaneously.
+- The unchanged reading engine passes 6,661 data-driven cases and its targeted edge cases.
+- Browser QA checked the single-column desktop layout and a 390px iframe viewport. Question and appendix links arrive at their targets; older question URLs still work. Source dashes, explicit zeroes and unpublished generational bases remain distinct.
+- The narrow-screen appendix stacks responses under each group. No horizontal overflow was observed in the checked views.
+- A CSV downloaded through the browser reproduced all 40 cells of q1_3 in the generational appendix, retained missing bases and included source-page provenance.
+- No report-script errors were observed during browser checks; browser-extension errors were unrelated to the report.
+
+- An isolated v1.1-to-v1.2 upgrade preserved Git history, unrelated files and data modification times; every changed existing file had an exact timestamped backup. A second installation changed nothing.
+- A real local Git remote with a mock GitHub CLI confirmed one descendant update commit, the new report assets, a main push and Pages configuration update. A second publication created no empty commit.
+
+## Previous version 1.1 checks (retained)
 
 - All three published-data files remain byte-identical to v1.0. Structural validation still passes for 91 records and 16,749 source cells.
 - Reading logic passes 6,661 data-driven cases, plus targeted tests of source-rounded nets, ties, zero versus dash, total exclusion, multiple-response language and missing group values.

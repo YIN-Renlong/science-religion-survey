@@ -42,7 +42,7 @@ Q10 permits multiple responses and is restricted to people agreeing/strongly agr
 4. Main and generational total nets can differ. Science explaining everything is 29% agreement in the main section and 30% in the appendix; the religion/smallpox comparison is 20% and 21%. Records remain separate; no corrected number is invented.
 5. The generational appendix includes knowledge/confidence categories without the score thresholds needed to reproduce them. Only the published low/medium/high distributions are shown.
 6. The generational appendix gives no unweighted or weighted base counts. `null` indicates “not published”; overall counts are not borrowed from other tables.
-7. Some questionnaire and table statements have minor wording differences. For example, q9_7 is about “Only animals” in the questionnaire and “Only plants and animals” in the tables. The explorer displays the published table wording and links both sources.
+7. Some questionnaire and table statements have minor wording differences. For example, q9_7 is about “Only animals” in the questionnaire and “Only plants and animals” in the tables. The report displays the published table wording and links both sources.
 
 ## Provenance and verification
 
@@ -52,6 +52,8 @@ Percentages were extracted from the PDF text and independently matched against P
 
 This is a descriptive visualisation of public opinion. The executive summary and the full report contain interpretations beyond the table values. The interface's reading notes are labelled explanations, not additional survey findings.
 
-## Dashboard reading notes (v1.1)
+## Report reading notes (v1.2)
 
-Reading notes are deterministic descriptions of the currently displayed data. Maxima and ties use the published rounded integers. Group ranges exclude the total and nonnumeric dashes. Net gaps use the first two main published net rows; narrower endpoint nets stay separate. No additional response category, reconstructed percentage, significance test or causal interpretation is introduced. The underlying data files are unchanged from v1.0.
+Reading notes are deterministic descriptions of each chart’s published data. Maxima and ties use the published rounded integers. Group ranges exclude the total and nonnumeric dashes. Net gaps use the first two main published net rows; narrower endpoint nets stay separate. No additional response category, reconstructed percentage, significance test or causal interpretation is introduced. The underlying data files are unchanged from v1.0.
+
+All question charts use the published total for their own question base. Every group value remains visible in the full appendix. The four science-response matrices appear separately; no response selection is required. No additional values have been calculated to populate the longer layout.

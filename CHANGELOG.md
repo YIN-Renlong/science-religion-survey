@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 — 9 October 2026
+
+- Replaced the two-column dashboard and question picker with one continuous, single-column reading flow.
+- Removed dropdowns, search controls, view selectors and collapsed methodology. All results are visible by scrolling.
+- Showed all four science-response matrices sequentially, each with its own reading note and highlighted maximum.
+- Added charts and descriptive notes for all 91 published table records, grouped by topic.
+- Added a visible appendix containing all 16,749 published cells and dashes, response keys and published bases. Narrow screens stack groups vertically.
+- Retained section anchors, source links and CSV/JSON downloads; older question links lead to the corresponding chart or full table.
+- Preserved “Developed by YIN Renlong · 2026” near the logo.
+- Kept all three dataset files byte-identical to v1.1; dataset version remains 1.0.0.
+- Continued the same repository, no-build publication and timestamped backup workflow.
+
 ## 1.1.0 — 9 October 2026
 
 - Converted separate screen sections into one continuous dashboard, with in-page navigation and the existing shareable question URLs retained.

@@ -1,6 +1,6 @@
 # Science, Religion & Public Perception
 
-Version 1.1.0 is a single-page dashboard.
+Version 1.2.0 is a single-column scrolling report.
 
 An independent, static visualisation of the published Theos–Faraday–YouGov survey tables. Created by YIN Renlong.
 
@@ -12,25 +12,26 @@ Open `index.html` directly. There are no external JavaScript, CSS, font, or API 
 
     python3 -m http.server 8000
 
-Then visit http://localhost:8000. The data are loaded through a local classic script, so the explorer also works under `file://` without a development server. Clipboard support for public view links requires an HTTPS host; local files are identified as local.
+Then visit http://localhost:8000. The data are loaded through a local classic script, so the report also works under `file://` without a development server.
 
 For optional development only, `package.json` supplies a Vite preview server. Node/npm are not required for opening, serving, or publishing the website. The optional development packages are not loaded by visitors.
 
 ## Contents
 
-- One continuous dashboard with in-page navigation, a compatibility wording comparison and a science-by-wording matrix.
-- Explorer: all 75 main published table blocks and 16 generational appendix blocks, including repeated questions and three derived scores.
-- Distribution and one-dimension demographic comparison views, with brief reading notes and visual highlights that follow the selected data.
-- Exact tables, unweighted/weighted bases, source-page links, CSV/JSON downloads.
-- Methods and source discrepancies, with no invented intersections or statistical inference.
+- One continuous, single-column report with optional section anchors; no dropdowns, question picker, tabs or collapsed content.
+- A compatibility wording comparison, followed by four separate science-by-wording matrices for agreement, disagreement, don't know and neutral responses.
+- All 75 main table records and 16 generational appendix records, each with an overall-response chart and a short descriptive reading. Published nets are shown separately from their components.
+- A visible appendix containing every group value and its published base. Tables become vertical group cards on narrow screens, without horizontal scrolling.
+- Visible methodology, source-page links, CSV/JSON downloads and developer attribution beside the logo.
 
-The 91 records contain 16,749 published percentage cells and dash symbols. They are not 91 distinct questionnaire items and do not represent the complete respondent-level dataset.
+The 91 records contain 16,749 published percentage cells and dash symbols. They are not 91 distinct questionnaire items and do not represent the complete respondent-level dataset. All are included on the page; the long appendix follows the question charts.
 
 ## Structure
 
 - `index.html`: semantic page structure and methods.
 - `assets/css/styles.css`: responsive presentation.
-- `assets/js/main.js`: in-page navigation, charts, filters, exports.
+- `assets/js/main.js`: document assembly, anchor compatibility and CSV exports.
+- `assets/js/report.js`: complete chart and table markup, with no display filters.
 - `assets/js/insights.js`: deterministic descriptive chart readings.
 - `assets/js/data.js`: browser-ready copy of the structured data.
 - `data/survey.json`: canonical transcription with provenance.
@@ -68,15 +69,20 @@ Intended repository: https://github.com/YIN-Renlong/science-religion-survey
 
 Expected Pages address after publication: https://yin-renlong.github.io/science-religion-survey/
 
-## Version 1.1 upgrade
+## Version 1.2 upgrade
 
-Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files are left byte-identical, and the existing Git history and repository are reused. See `CHANGELOG.md`. The dashboard version is 1.1.0; the unchanged dataset remains 1.0.0.
+Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files are left byte-identical, and the existing Git history and repository are reused. See `CHANGELOG.md`. The dashboard version is 1.2.0; the unchanged dataset remains 1.0.0.
 
-Chart notes report maxima, ties and percentage-point ranges at the published precision. They update with the controls and do not imply statistical significance or causation. Comparisons exclude the total from group ranges and never treat a dash as zero.
+Previously shared explorer links lead to the corresponding question or its full group table. New links use ordinary question, topic and table anchors. They do not change which content appears.
 
-Optional development checks for this logic use Node:
+Chart notes report maxima, ties and percentage-point gaps at the published precision. They do not imply statistical significance or causation. No group intersections are invented and a dash is never treated as zero.
+
+Optional development checks use Node:
 
     node scripts/validate_insights.cjs
+    node scripts/validate_report.cjs
+
+The report check verifies all 91 charts, four matrices, all 16,749 exact published tokens, working internal anchors, and absence of selection controls.
 
 ## Attribution and rights
 
