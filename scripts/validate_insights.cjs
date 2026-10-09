@@ -59,10 +59,10 @@ for(const r of data.records){
 }
 console.log(`PASS: source-rounded nets, ties, zero vs dash, totals excluded from ranges, and ${checked} data-driven reading cases.`);
 
-// Each source record has a concise, separately labelled course reading tied to published totals.
+// Each source record has a concise, separately labelled interpretation tied to published totals.
 for(const r of data.records){
  const context=read.interpretation(r);
- assert(context.meaning.length>40 && context.evidence.length>0,`Missing course interpretation: ${r.id}`);
+ assert(context.meaning.length>40 && context.evidence.length>0,`Missing theological interpretation: ${r.id}`);
  assert.doesNotMatch(context.meaning,/undefined|NaN|Infinity/);
  for(const key of context.evidence){
   const [id,ri,ci]=key.split(':');
@@ -71,7 +71,7 @@ for(const r of data.records){
  }
 }
 const meaning=id=>read.interpretation(record(id)).meaning;
-assert.match(meaning('q8a_6__main'),/evenly divided.*astronomy and cosmology make/);
+assert.match(meaning('q8a_6__main'),/evenly balanced.*astronomy and cosmology make/);
 assert.match(meaning('q8b_1__main'),/almost evenly divided.*Big Bang.*Christian/);
 for(const id of ['q8c_6__main','q8c_7__main']){
  assert.match(meaning(id),/^(49|50)% answer “don’t know”.*uncertainty the largest response/);
@@ -84,4 +84,4 @@ assert.match(meaning('q9_9__main'),/cannot be read as rejection of God/);
 assert.match(meaning('q24_2__main'),/should not be treated as a measure of non-religiosity/);
 assert.match(meaning('profile_religion_pdl__main'),/does not identify them as atheists/);
 assert.notEqual(read.interpretation(record('q1_3__main')).evidence[0],read.interpretation(record('q1_3__generations')).evidence[0]);
-console.log('PASS: 91 evidence-linked course interpretations; near-ties, uncertainty, atheist wording, technology motives and affiliation are read in context.');
+console.log('PASS: 91 evidence-linked theological interpretations; near-ties, uncertainty, atheist wording, technology motives and affiliation are read in context.');

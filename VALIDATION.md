@@ -1,8 +1,19 @@
 # Release validation
 
-Release 1.5.0 · 9 October 2026
+Release 1.6.0 · 9 October 2026
 
-## Version 1.5 checks
+## Version 1.6 checks
+
+- Canonical JSON, CSV and browser data remain byte-identical to v1.5; all 91 source records and 16,749 published percentage/dash cells are preserved.
+- The existing numerical checks pass 6,661 reading cases. All 91 rewritten interpretations have valid references to published total cells, with targeted checks retaining the direction of atheist wording, uncertainty, near-ties, vaccination motives, recent creation, qualifications and affiliation.
+- The renderer retains ten figures, six chart forms and all 134 exact source values. All ten complete insight texts were checked in the takeaway boxes below their graphics, with the original short introductions preserved.
+- Desktop browser review confirmed the revised faith/religion and Big Bang explanations, ten “Insights from the data” headings and ten separately labelled theological paragraphs. Source archives remain closed by default.
+- Opening the Big Bang source record showed the revised supporting interpretation, with its complete-response disclosure still closed. The archive’s interpretation labels consistently use “Insights from the data”.
+- A 390px iframe viewport (375px content width) showed the complete expanded faith/religion insight with readable wrapping and no horizontal page overflow.
+- The v1.5-to-v1.6 installer upgrade preserves Git history, unrelated files and unchanged data modification times, creates exact timestamped backups and makes no changes on a second installation.
+- Simulated publication uses a real local Git remote and a mock GitHub CLI. It creates one descendant commit, pushes main, configures Pages and adds no empty commit on rerun. This is not a live GitHub deployment.
+
+## Previous version 1.5 checks (retained)
 
 - Canonical JSON, CSV and browser data are byte-identical to v1.4. The 91 published records and all 16,749 source percentage/dash cells remain unchanged.
 - The numerical reading engine still passes 6,661 cases and its source-net, tie, dash and zero regressions. Every record has a course interpretation with valid references to numeric published total cells.

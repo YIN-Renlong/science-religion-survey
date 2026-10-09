@@ -75,7 +75,7 @@ git add -- .survey-project.json .gitignore .nojekyll index.html README.md DATA_N
 if git diff --cached --quiet; then
   echo "No changes to commit."
 else
-  git commit -m "Update survey dashboard to v1.5 with contextual readings and wider presentation"
+  git commit -m "Update survey dashboard to v1.6 with clearer theological insights"
 fi
 
 if [ "$REPO_EXISTS" -eq 0 ]; then

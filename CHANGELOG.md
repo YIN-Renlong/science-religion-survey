@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.6.0 — 9 October 2026
+
+- Renamed the explanation label to “Insights from the data”.
+- Rewrote all ten main insights as an observed pattern followed by explicit relevance to theological research.
+- Explained concrete distinctions concerning faith, religious institutions, creation, the soul, human dignity, moral obligations and scientific authority.
+- Rewrote the supporting interpretations for all 91 published records; retained evidence links and separated possible explanations from measured findings.
+- Updated the closing research synthesis and methods description.
+- Preserved the ten-figure page, six chart forms, source wording, all original data, collapsed references, responsive layout and the existing installer/GitHub workflow.
+
 ## 1.5.0 — 9 October 2026
 
 - Added concise course interpretations alongside the numerical readings for all 91 published records, with source-cell references for audit.

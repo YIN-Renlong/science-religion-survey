@@ -35,7 +35,7 @@ for(const r of data.records){
   const card=report.records.slice(start,next===-1?undefined:next);
   const tag=report.records.slice(report.records.lastIndexOf('<details',start),report.records.indexOf('>',start)+1);
   assert(!/\sopen(?:\s|=|>)/.test(tag),`Question must start closed: ${r.id}`);
-  assert.equal([...card.matchAll(/data-interpretation=/g)].length,1,`One course interpretation: ${r.id}`);
+  assert.equal([...card.matchAll(/data-interpretation=/g)].length,1,`One theological interpretation: ${r.id}`);
   assert(card.includes(`data-interpretation="${r.id}"`));
   assert(card.includes('data-return-to-story'),`Return control: ${r.id}`);
   assert(card.includes('class="chart-reading"'),`Missing reading: ${r.id}`);
@@ -52,7 +52,7 @@ for(const [,id,keys] of report.records.matchAll(/data-interpretation="([^"]+)" d
   const [recordId,ri,ci]=key.split(':');
   assert.equal(recordId,id);
   const r=data.records.find(r=>r.id===recordId);
-  assert.equal(Number(ci),0,'Course notes refer to the published question total');
+  assert.equal(Number(ci),0,'Interpretations refer to the published question total');
   assert.equal(typeof r.rows[Number(ri)].values[0],'number','Interpretations cite numeric source cells');
  }
 }
