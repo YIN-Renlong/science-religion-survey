@@ -52,8 +52,12 @@ Percentages were extracted from the PDF text and independently matched against P
 
 This is a descriptive visualisation of public opinion. The executive summary and the full report contain interpretations beyond the table values. The interface's reading notes are labelled explanations, not additional survey findings.
 
-## Report reading notes (v1.2)
+## Report reading notes (v1.3)
 
 Reading notes are deterministic descriptions of each chart’s published data. Maxima and ties use the published rounded integers. Group ranges exclude the total and nonnumeric dashes. Net gaps use the first two main published net rows; narrower endpoint nets stay separate. No additional response category, reconstructed percentage, significance test or causal interpretation is introduced. The underlying data files are unchanged from v1.0.
 
-All question charts use the published total for their own question base. Every group value remains visible in the full appendix. The four science-response matrices appear separately; no response selection is required. No additional values have been calculated to populate the longer layout.
+The default view contains 13 figures, selected to show comparisons across related questions. It covers compatibility, all 32 science-and-wording statements, uncertainty across those statements, eight views-of-science statements, eight confidence items, nine evolution statements, three views-of-religion statements, seven technologies, six age groups on the general compatibility question, and the two qualification questions. Some topics, including the conditional evolution-reasons item, affiliation detail and generation records, remain in the full reference archive rather than the main narrative.
+
+The full 91-record question archive and complete group tables are closed by default. All original data remain available through these sections and downloads. Chart labels use shorter subject names where appropriate; exact table wording remains in the linked source record.
+
+Opposing bars show two separate published percentages, both measured from zero at the centre. They do not rescale the selected responses to 100%, and neutral and unknown values are displayed separately. The uncertainty figure shows each published don't-know percentage, with a band from the minimum to the maximum across eight science questions. This band is not a confidence interval. Age groups are compared within one question, not treated as longitudinal change. The main question comparisons do not establish individual combinations of beliefs, paired wording effects or statistical significance.

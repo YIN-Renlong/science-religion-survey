@@ -1,8 +1,23 @@
 # Release validation
 
-Release 1.2.0 · 9 October 2026
+Release 1.3.0 · 9 October 2026
 
-## Version 1.2 checks
+## Version 1.3 checks
+
+- Canonical JSON, CSV and browser data remain byte-identical to v1.2; the dataset is still version 1.0.0.
+- Coverage validation confirms 13 default figures and checks all 308 labelled source values in the new comparisons against the canonical transcription.
+- The complete optional archive still contains 91 records and all 16,749 exact published percentage/dash tokens, with unique internal anchors.
+- Reference sections are closed by default. The default figures contain no data tables, dropdowns or hidden chart selectors.
+- Targeted checks retain the published 29% net instead of recomputing 30% from rounded components, preserve the qualification item’s 0%, and verify the 49–52% uncertainty range.
+- The unchanged descriptive reading engine passes 6,661 data-driven cases and its edge cases.
+- Desktop and 390px iframe browser checks confirmed readable comparisons, no page-width overflow, hidden reference content by default, and correct opening of a question and its full table from a chart link.
+- Closing the raw-data reference section hides its tables and returns to the findings.
+
+- A direct older question URL opens its archive record automatically, retaining the separate generational net and unpublished bases. No report-script errors were observed.
+- An isolated v1.2-to-v1.3 upgrade preserved Git history, unrelated files and unchanged data modification times, backed up every changed existing file, and changed nothing on rerun.
+- A real local Git remote with a mock GitHub CLI confirmed one descendant commit, main push, inclusion of the new visual assets, Pages configuration and no extra commit on a clean rerun.
+
+## Previous version 1.2 checks (retained)
 
 - All three dataset files remain byte-identical to v1.1. Structural validation passes for 91 records and 16,749 published cells.
 - Report coverage checks confirm 91 question charts, four matrices with 128 values, 91 group tables and every exact published token. All internal anchors are unique and have a destination.

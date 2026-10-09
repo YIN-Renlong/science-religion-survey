@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0 — 9 October 2026
+
+- Changed the default experience from an exhaustive list of records to 13 visual figures organised around survey findings.
+- Added ranked bars, opposing agreement/disagreement bars, a plot of uncertainty across wording variants, and paired qualification bars.
+- Used finding-led titles and direct labels so lengths and positions expose the comparison without requiring readers to scan raw tables.
+- Moved the full 91-record question archive and 16,749-cell table appendix into reference sections closed by default.
+- Retained source access through chart labels, PDFs, CSV/JSON downloads and existing question/table links; links open the appropriate reference section automatically.
+- Preserved one-column scrolling, developer attribution, source-rounded percentages, distinct unknown categories and all unchanged data files.
+- Retained the same repository and installer backup/publishing workflow.
+
 ## 1.2.0 — 9 October 2026
 
 - Replaced the two-column dashboard and question picker with one continuous, single-column reading flow.
