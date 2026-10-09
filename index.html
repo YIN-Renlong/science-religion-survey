@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the published Theos–Faraday–YouGov survey on science and religion: UK fieldwork in 2021, report published in 2022. An independent visualisation by YIN Renlong.">
+  <meta name="theme-color" content="#112d3a">
+  <title>Science, Religion & Public Perception · Survey Explorer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23112d3a'/%3E%3Cpath d='M7 9h18M7 16h13M7 23h7' stroke='%2351c7bb' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="Survey explorer home"><span class="brand-mark" aria-hidden="true">≋</span><span>Science & Religion<span class="brand-sub">PUBLIC PERCEPTION / UK</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#overview" data-nav="overview">Overview</a>
+      <a href="#explorer" data-nav="explorer">Explore the tables</a>
+      <a href="#methods" data-nav="methods">Methods & sources</a>
+    </nav>
+    <span class="edition">2021 SURVEY</span>
+  </header>
+  <main id="main" tabindex="-1">
+    <section id="overview" class="view" aria-labelledby="overview-title">
+      <div class="intro"><div><p class="eyebrow">THEOS · FARADAY · YOUGOV</p><h1 id="overview-title">Science, religion &<br class="desktop-break"> public perception.</h1><p class="lede">What do the published answers reveal? Explore the wording, the differences and the uncertainty in a UK survey.</p></div><dl class="survey-stamp"><div><dt>Participants</dt><dd>5,153</dd></div><div><dt>Fieldwork</dt><dd class="date">5 May–13 June 2021</dd></div><div><dt>Report published</dt><dd class="date">2022</dd></div></dl></div>
+      <article class="panel wording-panel">
+        <div class="panel-head"><div><p class="eyebrow">01 / WORDS & PERCEPTIONS</p><h2>How compatible with science?</h2></div><a class="text-link" href="#explorer?q=q3_1__main">Inspect the full scale</a></div>
+        <p class="panel-description">The survey asked about “religion”, “faith”, “Christianity” and “Islam”. Each bar retains the uncertainty in the published answers.</p>
+        <div class="legend"><span><i class="swatch incompatible"></i>Incompatible (1–5)</span><span><i class="swatch compatible"></i>Compatible (6–10)</span><span><i class="swatch unknown"></i>Don’t know</span></div>
+        <div id="wording-chart" class="wording-chart"></div>
+        <div class="chart-caption"><span>Weighted percentages · question-specific unweighted n shown</span><a id="wording-source" target="_blank" rel="noopener" href="https://www.theosthinktank.co.uk/cmsfiles/Data-tables-combined.pdf#page=4">Source: tables, pp. 4–6</a></div>
+        <div class="interpretation"><strong>Read the whole distribution.</strong> The Islam wording receives fewer compatible and fewer incompatible responses than religion generally, alongside more “don’t know” answers. These are wording groups, not respondents’ religious identities.</div>
+      </article>
+      <article class="panel disciplines-panel">
+        <div class="panel-head"><div><p class="eyebrow">02 / PARTICULAR SCIENCES</p><h2>Where is difficulty perceived?</h2></div><label class="compact-control">Published response<select id="matrix-metric"><option value="agree">Agree / strongly agree</option><option value="disagree">Disagree / strongly disagree</option><option value="unknown">Don’t know</option><option value="neutral">Neither agree nor disagree</option></select></label></div>
+        <p class="panel-description" id="matrix-description">Responses to statements that a particular science makes it harder to be religious, a Christian, a Muslim or an atheist. Select a cell to see its exact wording and base.</p>
+        <div class="matrix-scroll" tabindex="0" aria-label="Science comparison table, scroll horizontally on small screens"><table class="matrix" id="science-matrix"></table></div>
+        <p class="small">These statements use an agreement scale, unlike the compatibility question above. The atheist wording is a separate claim. Comparisons are descriptive; respondent bases differ.</p>
+      </article>
+      <div class="topic-links" aria-label="More ways to explore"><a href="#explorer?topic=Evolution"><span>03 / EVOLUTION</span><strong>Evidence, origins & belief</strong><p>Read each statement in its own terms.</p></a><a href="#explorer?topic=Technology+%26+risk"><span>04 / TECHNOLOGY</span><strong>Benefits, risks & uncertainty</strong><p>From renewable energy to animal research.</p></a><a href="#explorer"><span>THE PUBLISHED TABLES</span><strong>91 tables. Inspect the detail.</strong><p>Compare one demographic dimension at a time.</p></a></div>
+      <p class="source-credit">An independent visualisation by YIN Renlong. Original research: Theos and The Faraday Institute for Science and Religion; polling: YouGov. <a href="#methods">Read the methods and limitations.</a></p>
+    </section>
+    <section id="explorer" class="view" hidden aria-labelledby="explorer-title">
+      <div class="explorer-heading"><div><p class="eyebrow">THE PUBLISHED EVIDENCE</p><h1 id="explorer-title">Explore the tables</h1></div><p>Choose a question, then inspect its distribution or compare published groups.</p></div>
+      <div class="explorer-layout">
+        <aside class="question-picker" aria-label="Choose a published table">
+          <label for="search">Find a question</label><input type="search" id="search" placeholder="e.g. evolution, ethics, faith">
+          <label for="topic">Topic</label><select id="topic"><option value="">All topics</option></select>
+          <label for="publication">Published section</label><select id="publication"><option value="">All tables</option><option value="main">Main demographic tables</option><option value="generations">Generational appendix</option></select>
+          <p id="result-count" class="small" aria-live="polite"></p><div id="question-list" class="question-list"></div>
+        </aside>
+        <article class="panel question-panel" id="question-panel" aria-live="polite" aria-atomic="false"></article>
+      </div>
+    </section>
+    <section id="methods" class="view" hidden aria-labelledby="methods-title">
+      <div class="methods-intro"><p class="eyebrow">READING THE EVIDENCE</p><h1 id="methods-title">Methods & sources</h1><p class="lede">A visual transcription of published results, with their limits kept in view.</p></div>
+      <div class="methods-grid">
+        <article class="panel prose"><h2>What this represents</h2><p>Theos and The Faraday Institute for Science and Religion commissioned a YouGov online survey of 5,153 UK adults. Fieldwork ran from 5 May to 13 June 2021. The report by Nick Spencer and Hannah Waite was published in 2022.</p><p>The source describes the percentages as weighted to represent UK adults aged 18+. The full report describes recruitment through the YouGov panel and sample quotas. This site displays the published weighted percentages and, where provided, both the actual respondent count (unweighted n) and the weighted base.</p><p>There are 75 main table blocks and 16 blocks in the generational appendix, including repeated questions and three derived measures. These are <strong>91 table records, not 91 distinct survey questions</strong>. The supplied tables do not contain every item in the questionnaire.</p><p>Expert interviews are part of the wider research, but are not visualised as a representative survey here. The data describe opinions; they do not settle scientific or theological questions.</p></article>
+        <article class="panel prose"><h2>How to read the charts</h2><ul><li>Every value reproduces a published percentage. Combined “net” rows are read directly from the tables, not calculated by adding rounded categories.</li><li>The opening bars use the published categories: scores 1–5 are incompatible, 6–10 compatible. There is no neutral midpoint on the 1–10 scale. The explorer exposes all scores separately.</li><li>Explorer bars share a 0–100% axis. They are not normalised to make rounded values add to 100. Multiple-response questions use separate bars.</li><li>“Don’t know”, neutral, “not sure” and “I don’t know what this is” retain their distinct source meanings.</li><li>A dash is preserved as “— (source dash)”. Its meaning is not inferred as zero. Published 0% remains 0%.</li><li>No significance tests, causal claims, modelled values or confidence intervals are added.</li></ul></article>
+        <article class="panel prose"><h2>Groups & small samples</h2><p>The main tables provide gender, age, ethnicity and region separately. These are not joint filters. “Male” and “16–29” cannot be combined into a new subgroup using these aggregate tables.</p><p>A question <em>about Christianity</em> does not identify a Christian respondent. Religious affiliation is available as a question outcome, not as a general filtering dimension in the supplied tables.</p><p>The explorer flags unweighted bases below 100 as a project caution convention, not a publisher-defined significance threshold. Very small groups may yield unstable percentages. Generational bases are not supplied, so their absence is shown explicitly.</p><p>Age and generational differences describe this 2021 sample. They do not establish individual change, trends over time or separate age and cohort effects.</p></article>
+        <article class="panel prose"><h2>Source inconsistencies retained</h2><ul><li>The stated population is 18+, but the printed age labels include 16–29 and Gen Z 16–24. Labels are reproduced as published; no under-18 participation is inferred.</li><li>The main tables and generational appendix sometimes report different total net percentages. For “Science will be able to explain everything one day”, agreement is 29% in the main table and 30% in the appendix. Both versions remain separate.</li><li>Stem cell research is printed as q11_2 in the tables, duplicating nuclear power. The questionnaire identifies it as q11_1. Both identifiers are retained in the exported data.</li><li>The q8d statements concern being an atheist, while the source base label says “Those answering about faith”. This discrepancy is disclosed on each relevant record.</li><li>The thresholds used for the appendix’s low/medium/high knowledge and confidence scores are not specified in the supplied tables.</li></ul><p>See <a href="DATA_NOTES.md" target="_blank">DATA_NOTES.md</a> for transcription conventions and provenance.</p></article>
+      </div>
+      <article class="panel sources-panel"><div><p class="eyebrow">RETURN TO THE ORIGINAL</p><h2>Sources & downloads</h2><p>Inspect the PDFs alongside the visualisation. Chart source links open the relevant PDF page.</p><div id="source-links" class="source-links"></div></div><div class="downloads"><h3>Transcribed data</h3><button id="download-json" class="button" type="button">Download JSON</button><button id="download-all-csv" class="button secondary" type="button">Download all tables as CSV</button><p class="small">Source percentages, bases, question IDs and page references. Dataset version 1.0.0.</p></div></article>
+      <p class="source-credit">Visualisation and transcription by YIN Renlong. Not an official Theos, Faraday or YouGov website. Original research and materials remain attributed to their respective creators. No open licence over the source materials is asserted.</p>
+    </section>
+    <noscript><p class="panel">JavaScript is needed for the interactive charts. You can still <a href="data/survey.csv">download the transcribed tables</a> or <a href="https://www.theosthinktank.co.uk/cmsfiles/Data-tables-combined.pdf">read the original PDF</a>.</p></noscript>
+  </main>
+  <footer><span>SCIENCE, RELIGION & PUBLIC PERCEPTION</span><span>2021 fieldwork · 2022 report · Independent visualisation</span></footer>
+</body>
+</html>
