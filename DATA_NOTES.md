@@ -52,7 +52,7 @@ Percentages were extracted from the PDF text and independently matched against P
 
 This is a descriptive visualisation of public opinion. The executive summary and the full report contain interpretations beyond the table values. The interface's reading notes are labelled explanations, not additional survey findings.
 
-## Report reading notes (v1.4)
+## Report reading notes (v1.5)
 
 The main narrative contains ten course-focused figures. They cover broad compatibility; all eight sciences under the religious wording; agreement across all 32 science-and-wording statements; uncertainty across those statements; all eight confidence items; four statements on science’s value and reach; four evolution/origins statements; two explanatory-limit statements; science and ethics; and three views of religion. Figures may reuse a question to make a different comparison; they are not ten new survey measures.
 
@@ -65,3 +65,12 @@ The uncertainty chart shows all eight published don’t-know percentages for eac
 Comparisons and takeaways are descriptive. Wording variants do not identify respondents by religion. The figures cannot establish an individual’s combination of beliefs, respondent-level correlations, paired wording effects or statistical significance. Reported percentage-point differences subtract the displayed rounded percentages.
 
 The underlying data files remain unchanged from v1.0. The original reading engine in the archive retains source-rounded nets, ties, explicit zeroes, source dashes and publication-specific differences.
+
+
+## Contextual explanations and disclosure (v1.5)
+
+Each of the 91 published records has a labelled course interpretation next to its numerical summary. These short editorial explanations relate the exact item to questions about scientific explanation, perceived conflict, religious belief, ethics or identity. They do not represent additional findings from the survey authors. The underlying source-cell references are retained in the markup for audit.
+
+An equal or one/two-point rounded net gap is described as an even or almost even division, not a significance result. For science-specific Muslim wording, the leading uncertainty response is acknowledged. Atheist wording retains its original direction. Technology judgments are not assigned religious motivations; qualifications, affiliation and belief are not substituted for each other. Interpretations apply to the published question total, not to every subgroup.
+
+The chart record and its original group table are individually collapsible and closed by default. Only one question record and one original table can be open in their respective groups. Main and generational records remain separately labelled and keep their published totals. The primary question chart shows the two main nets when available; complete response categories and extra endpoint nets are accessible in a closed disclosure. These views describe the same answers, not additional respondents. All values remain accessible through the original tables and complete downloads.

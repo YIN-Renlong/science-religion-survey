@@ -31,14 +31,32 @@ for(const r of data.records){
     expected++;
   }
   const start=report.records.indexOf(`id="q-${r.id}"`);
-  const end=report.records.indexOf('</article>',start);
-  const card=report.records.slice(start,end);
+  const next=report.records.indexOf('<details class="reference-card question-card"',start);
+  const card=report.records.slice(start,next===-1?undefined:next);
+  const tag=report.records.slice(report.records.lastIndexOf('<details',start),report.records.indexOf('>',start)+1);
+  assert(!/\sopen(?:\s|=|>)/.test(tag),`Question must start closed: ${r.id}`);
+  assert.equal([...card.matchAll(/data-interpretation=/g)].length,1,`One course interpretation: ${r.id}`);
+  assert(card.includes(`data-interpretation="${r.id}"`));
+  assert(card.includes('data-return-to-story'),`Return control: ${r.id}`);
   assert(card.includes('class="chart-reading"'),`Missing reading: ${r.id}`);
   assert(card.includes('class="bar-plot"'),`Missing chart: ${r.id}`);
   if(r.publication==='generations')assert(card.includes('<strong>Not published</strong>'),'Do not borrow a generational base');
 }
 assert.equal(expected,16749);
 assert.equal(cells.size,expected);
+for(const tag of [...report.appendix.matchAll(/<details[^>]*data-breakdown=[^>]*>/g),...report.records.matchAll(/<details class="response-detail"[^>]*>/g)])assert(!/\sopen(?:\s|=|>)/.test(tag[0]),'Individual tables and complete-response views start closed');
+assert.equal([...report.records.matchAll(/name="question-references"/g)].length,91,'Each question belongs to the exclusive reference group');
+assert.equal([...report.appendix.matchAll(/name="table-references"/g)].length,91,'Each original table is independently collapsible');
+for(const [,id,keys] of report.records.matchAll(/data-interpretation="([^"]+)" data-evidence="([^"]+)"/g)){
+ for(const key of keys.split(' ')){
+  const [recordId,ri,ci]=key.split(':');
+  assert.equal(recordId,id);
+  const r=data.records.find(r=>r.id===recordId);
+  assert.equal(Number(ci),0,'Course notes refer to the published question total');
+  assert.equal(typeof r.rows[Number(ri)].values[0],'number','Interpretations cite numeric source cells');
+ }
+}
+
 assert(!/<(?:select|input|aside)\b/i.test(markup),'No selectors or split sidebar');
 for(const id of ['question-archive','raw-data','methods']){
  const tag=template.match(new RegExp('<details[^>]*id="'+id+'"[^>]*>'))?.[0];
@@ -79,4 +97,4 @@ assert.equal(differences.filter(d=>d>0).length,1);assert.equal(differences.filte
 assert.equal([...findings.html.matchAll(/class="waffle-cell positive"/g)].length,sourcePoint('q1_10',/^Net: Strongly agree/));
 assert.equal([...findings.html.matchAll(/class="waffle-cell negative"/g)].length,sourcePoint('q1_10',/^Net: Disagree/));
 assert(findings.html.includes('width:28%') && findings.html.includes('99% after source rounding'),'Do not rescale the 99% explanatory-limits distribution');
-console.log(`PASS: 10 default visual figures, six chart forms, ${rendered.length} exact source values in the new comparisons, closed source archives, all 91 records / ${expected.toLocaleString('en-GB')} tokens preserved, and working anchors.`);
+console.log(`PASS: 10 default visual figures, six chart forms, ${rendered.length} exact source values in the new comparisons, 91 contextual readings, individually closed sources, all 91 records / ${expected.toLocaleString('en-GB')} tokens preserved, and working anchors.`);

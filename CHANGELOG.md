@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.0 — 9 October 2026
+
+- Added concise course interpretations alongside the numerical readings for all 91 published records, with source-cell references for audit.
+- Explained near-even results, uncertainty, atheist wording and applied ethical questions in their science-and-religion context without inventing causes or religious motives.
+- Made each question and original table individually collapsible, with full response categories closed under the primary chart. Repeated evidence stays accessible without appearing as a second finding.
+- Made source links open only their matching record; a return button closes reference sections and restores the originating figure.
+- Expanded the single-column page to the available width with responsive gutters, a navy-and-mint header, clearer typography and refined chart panels.
+- Strengthened the course relevance of the ten main figure takeaways. Retained ten figures, six chart forms, original wording, developer credit, downloads and all unchanged data.
+- Continued the same project, timestamped backups and normal GitHub update workflow.
+
 ## 1.4.0 — 9 October 2026
 
 - Curated exactly ten figures for a 10–15 minute Science and Religion presentation.

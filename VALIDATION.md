@@ -1,8 +1,21 @@
 # Release validation
 
-Release 1.4.0 · 9 October 2026
+Release 1.5.0 · 9 October 2026
 
-## Version 1.4 checks
+## Version 1.5 checks
+
+- Canonical JSON, CSV and browser data are byte-identical to v1.4. The 91 published records and all 16,749 source percentage/dash cells remain unchanged.
+- The numerical reading engine still passes 6,661 cases and its source-net, tie, dash and zero regressions. Every record has a course interpretation with valid references to numeric published total cells.
+- Targeted interpretation checks cover astronomy’s tied nets, the near-even Big Bang/Christian wording, dominant uncertainty in Muslim wording, the direction of atheist wording, vaccination judgments versus unmeasured religious motives, recent creation, qualifications and affiliation.
+- Renderer checks confirm ten main figures, six chart forms and all 134 exact source values. Each record contains one contextual reading. Question records, full-response disclosures and original tables start closed, and all anchors remain unique and resolve.
+- Desktop browser QA confirmed the wider layout and source flow: a heatmap cell opens exactly its question, response detail opens separately, the original-table link opens exactly its table, and the return button closes both archives and restores focus to the originating figure.
+- Opening a second question closes the first. A direct vaccination reference URL opens the correct record, including the published 73% and its contextual explanation.
+- At a 390px iframe viewport (375px content width), the heatmap and an expanded astronomy/Muslim source record fit without horizontal page overflow. Exact wording, interpretation, percentages and response disclosure remain readable.
+- No report-script errors were observed in the checked browser interactions; extension errors were excluded.
+- An isolated v1.4-to-v1.5 upgrade preserves Git history, unrelated files and unchanged data modification times. Changed files receive exact timestamped backups; a second installation makes no changes.
+- Simulated publication with a real local Git remote and a mock GitHub CLI creates one normal descendant commit, pushes main, configures Pages and creates no empty commit on rerun. This does not claim a live GitHub deployment.
+
+## Previous version 1.4 checks (retained)
 
 - All three data files remain byte-identical to v1.3; dataset version remains 1.0.0.
 - Coverage validation checks exactly ten figures and six chart forms. All 134 chart values match their canonical source rows, including the published 29% science net.

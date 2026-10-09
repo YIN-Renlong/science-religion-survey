@@ -1,6 +1,6 @@
 # Science, Religion & Public Perception
 
-Version 1.4.0 is a ten-figure, single-column visual story for a 10–15 minute Science and Religion presentation.
+Version 1.5.0 is a ten-figure, single-column visual story for a 10–15 minute Science and Religion presentation.
 
 An independent, static visualisation of the published Theos–Faraday–YouGov survey tables. Created by YIN Renlong.
 
@@ -39,9 +39,15 @@ The figures describe public perceptions in 2021. They do not answer the scientif
 
 ## Supporting evidence
 
-The full question archive, raw tables and detailed methods are all closed by default. Click a chart label or source link to open the exact supporting question. All 75 main table records and 16 generational records remain available, including all 16,749 published percentage cells and dashes. These 91 records are not 91 distinct survey questions.
+The full question archive, raw tables and detailed methods are all closed by default. Click a chart label or source link to open the exact supporting question. Each question and original table is also closed individually; opening a question keeps its full response categories behind a separate disclosure. Repeated titles identify the chart and its original evidence, not extra findings. A source link opens only the matching record, and “Return to the presentation” closes the references and returns to the originating figure.
 
-Age, technology, qualifications, affiliation, conditional evolution reasons and the generational appendix remain in the archive. Every original data file is byte-identical to v1.3. CSV/JSON downloads include the complete transcription.
+All 75 main table records and 16 generational records remain available, including all 16,749 published percentage cells and dashes. These 91 records are not 91 distinct survey questions.
+
+Age, technology, qualifications, affiliation, conditional evolution reasons and the generational appendix remain in the archive. Every original data file is byte-identical to v1.4. CSV/JSON downloads include the complete transcription.
+
+Every source record has a brief “What this suggests for science & religion” note alongside its numerical reading. These are labelled editorial interpretations for the course, not new survey-author findings. They distinguish perceived conflict, uncertainty, affiliation, belief, formal study and technological judgments. Main-figure takeaways also state the course relevance.
+
+The page uses the full available width with responsive gutters, larger figure headings and a single vertical reading path.
 
 The developer credit, survey date and source attribution remain visible. No respondent-level correlations, pooled rates, causal estimates or significance tests are added.
 
@@ -52,7 +58,7 @@ The developer credit, survey date and source attribution remain visible. No resp
 - `assets/js/main.js`: document assembly, anchor compatibility and CSV exports.
 - `assets/js/report.js`: complete question charts and source-table archive.
 - `assets/js/visuals.js`: grouped comparisons and finding-led figures, derived from the same published data.
-- `assets/js/insights.js`: deterministic descriptive chart readings.
+- `assets/js/insights.js`: deterministic numerical readings and evidence-linked course interpretations.
 - `assets/js/data.js`: browser-ready copy of the structured data.
 - `data/survey.json`: canonical transcription with provenance.
 - `data/survey.csv`: the same published values in long format.
@@ -89,11 +95,11 @@ Intended repository: https://github.com/YIN-Renlong/science-religion-survey
 
 Expected Pages address after publication: https://yin-renlong.github.io/science-religion-survey/
 
-## Version 1.4 upgrade
+## Version 1.5 upgrade
 
-Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files keep their content and modification times, and existing Git history and the repository are reused. See `CHANGELOG.md`. Dashboard version: 1.4.0. Dataset version: 1.0.0.
+Run the updated installer against the same project directory. Changed files receive timestamped backups, unchanged data files keep their content and modification times, and existing Git history and the repository are reused. See `CHANGELOG.md`. Dashboard version: 1.5.0. Dataset version: 1.0.0.
 
-Old question and table links still open their source record. Earlier main-topic links either lead to the current figure or the relevant reference section. Closing a source section returns to the findings.
+Old question and table links still open their source record. Earlier main-topic links either lead to the current figure or the relevant reference section. The return button closes both source sections and returns to the figure that opened the reference.
 
 The dot and lollipop axes run from 0 to 100%. The heatmap uses a clearly labelled 0–50% colour scale. Uncertainty bands show the minimum and maximum of eight published question values, not confidence intervals. Waffle squares represent percentage points, not individual respondents. Stacks are never rescaled; the 99% morality row retains its rounding gap. Published nets are read directly from the tables.
 
@@ -102,7 +108,7 @@ Optional development checks use Node:
     node scripts/validate_insights.cjs
     node scripts/validate_report.cjs
 
-The report check verifies ten default figures, six chart forms, 134 exact source values, the waffle’s cell counts, major comparison claims, closed reference sections, all 91 source records, all 16,749 published tokens and working internal links.
+The report check verifies ten default figures, six chart forms, 134 exact source values, the waffle’s cell counts, major comparison claims, 91 contextual readings, individually closed reference records, all 91 source records, all 16,749 published tokens and working internal links.
 
 ## Attribution and rights
 

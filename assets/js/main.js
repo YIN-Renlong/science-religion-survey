@@ -4,6 +4,7 @@
   const data=window.SURVEY_DATA;
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const $=id=>document.getElementById(id);
+  let returnId='findings';
   if(!data||!window.SURVEY_INSIGHTS||!window.SURVEY_REPORT||!window.SURVEY_VISUALS){
     $('finding-charts').textContent='The report could not load. Please check that the assets folder is beside index.html, or use the source and data links below.';
     return;
@@ -53,11 +54,24 @@
     if(target.tagName==='DETAILS')target.open=true;
     for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
   }
+  function returnToStory(){
+    for(const id of ['question-archive','raw-data']){
+      const section=$(id);
+      section.querySelectorAll('details[open]').forEach(detail=>{detail.open=false;});
+      section.open=false;
+    }
+    const target=$(returnId)||$('findings');
+    history.replaceState(null,'','#'+target.id);
+    target.setAttribute('tabindex','-1');target.scrollIntoView({block:'start'});target.focus({preventScroll:true});
+  }
   document.addEventListener('click',e=>{
+    if(e.target.closest('button[data-return-to-story]')){returnToStory();return;}
     const close=e.target.closest('button[data-close-detail]');
-    if(close){$(close.dataset.closeDetail).open=false;location.hash='findings';$('findings').scrollIntoView();$('findings').focus({preventScroll:true});return;}
+    if(close){returnToStory();return;}
     const link=e.target.closest('a[href^="#"]');
     if(!link)return;
+    const story=link.closest('[data-finding]');
+    if(story&&/^#(?:q-|table-)/.test(link.getAttribute('href')))returnId=story.id;
     let target;
     try{target=document.getElementById(decodeURIComponent(link.getAttribute('href').slice(1)));}catch(_){return;}
     if(target)reveal(target);
